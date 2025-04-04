@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, IBM_Plex_Mono, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Separator } from "@/components/ui/separator";
+import { Footer } from "@/components/Footer";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -34,9 +35,11 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen font-mono">
           <Navbar />
           <Separator />
-          <main className="flex items-center justify-center flex-1">
+          <main className="flex flex-col items-center justify-center flex-1">
             {children}
           </main>
+          <Separator />
+          <Footer />
         </div>
       </body>
     </html>
