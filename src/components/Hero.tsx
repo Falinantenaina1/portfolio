@@ -19,7 +19,7 @@ export const Hero = () => {
                 <p>Passionate about building performant, user-friendly, and scalable applications</p>
                 <div className="flex gap-x-2">
                     <Link className={cn(buttonVariants())} href="/">Dowload CV <Download /></Link>
-                    <Link className={cn(buttonVariants({variant: "outline"}))} href="/">Contact Me</Link>
+                    <Link className={cn(buttonVariants({variant: "outline"}))} href="/#contact">Contact Me</Link>
                 </div>
             </div>
             <div className="min-w-70 lg:min-w-80 xl:min-w-100">
