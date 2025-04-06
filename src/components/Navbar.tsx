@@ -5,7 +5,7 @@ export const Navbar = () => {
     return (
         <nav className="flex justify-between items-center p-6 md:py-8 lg:px-16 xl:py-16 xl:px-32">
             <Link href="/" className="md:text-2xl xl:text-3xl">
-                <span className="text-primary mr-2">&lt;F &gt;</span>
+                <span className="text-primary mr-2">&lt;F/&gt;</span>
                 Falinantenaina
             </Link>
             <div className="flex items-center gap-x-16">

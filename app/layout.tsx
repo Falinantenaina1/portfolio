@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Mono, Ubuntu } from "next/font/google";
+import { IBM_Plex_Mono, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Separator } from "@/components/ui/separator";
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${ubuntu.variable} ${ibmPlexMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen font-mono">
+        <div className="flex flex-col min-h-screen font-mono max-w-[120rem] mx-auto">
           <Navbar />
           <Separator />
           <main className="flex flex-col items-center justify-center flex-1">
