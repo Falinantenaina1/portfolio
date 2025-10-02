@@ -1,23 +1,36 @@
-import { Github, Instagram, Linkedin } from "lucide-react"
-import Link from "next/link"
+import { Github, Instagram, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <div className="bg-card flex justify-between items-center p-6 md:py-8 xl:py-16 xl:px-32">
-      <div>
-        &copy;{new Date().getFullYear()} Falinantenaina
-      </div>
+    <div className="bg-card flex items-center justify-between p-6 md:py-8 xl:px-32 xl:py-16">
+      <div>&copy;{new Date().getFullYear()} Falinantenaina</div>
       <div className="flex items-center gap-x-8">
-        <Link href="/" className="flex items-center gap-x-2">
-          <Instagram className="text-primary" /><span className="max-xl:hidden">Instagram</span>
+        <Link
+          href="/"
+          className="flex items-center gap-x-2"
+          aria-label="Instagram"
+        >
+          <Instagram className="text-primary" />
+          <span className="max-xl:hidden">Instagram</span>
         </Link>
-        <Link href="/" className="flex items-center gap-x-2">
-          <Linkedin className="text-primary" /><span className="max-xl:hidden">Linkedin</span>
+        <Link
+          href="/"
+          className="flex items-center gap-x-2"
+          aria-label="Linkedin"
+        >
+          <Linkedin className="text-primary" />
+          <span className="max-xl:hidden">Linkedin</span>
         </Link>
-        <Link href="/" className="flex items-center gap-x-2">
-          <Github className="text-primary" /><span className="max-xl:hidden">Github</span>
+        <Link
+          href="/"
+          className="flex items-center gap-x-2"
+          aria-label="Github"
+        >
+          <Github className="text-primary" />
+          <span className="max-xl:hidden">Github</span>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};

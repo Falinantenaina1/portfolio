@@ -1,12 +1,12 @@
-"use client";
-import React, { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { cn } from "@/lib/utils";
+'use client';
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
+import { useCallback, useEffect, useState } from 'react';
 
 export const FlipWords = ({
   words,
   duration = 1500,
-  className,
+  className
 }: {
   words: string[];
   duration?: number;
@@ -38,51 +38,51 @@ export const FlipWords = ({
       <motion.div
         initial={{
           opacity: 0,
-          y: 10,
+          y: 10
         }}
         animate={{
           opacity: 1,
-          y: 0,
+          y: 0
         }}
         transition={{
-          type: "spring",
+          type: 'spring',
           stiffness: 100,
-          damping: 10,
+          damping: 10
         }}
         exit={{
           opacity: 0,
           y: -40,
           x: 40,
-          filter: "blur(8px)",
+          filter: 'blur(8px)',
           scale: 2,
-          position: "absolute",
+          position: 'absolute'
         }}
         className={cn(
-          "z-10 inline-block relative text-primary text-left",
+          'text-primary relative z-10 inline-block text-left',
           className
         )}
         key={currentWord}
       >
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
-        {currentWord.split(" ").map((word, wordIndex) => (
+        {currentWord.split(' ').map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{
               delay: wordIndex * 0.3,
-              duration: 0.3,
+              duration: 0.3
             }}
             className="inline-block whitespace-nowrap"
           >
-            {word.split("").map((letter, letterIndex) => (
+            {word.split('').map((letter, letterIndex) => (
               <motion.span
                 key={word + letterIndex}
-                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
-                  duration: 0.2,
+                  duration: 0.2
                 }}
                 className="inline-block"
               >

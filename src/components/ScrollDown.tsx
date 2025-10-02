@@ -1,7 +1,13 @@
-import Image from "next/image"
+import Image from 'next/image';
 
 export const ScrollDown = () => {
   return (
-    <Image className="hidden xl:block mx-auto" src="/Scroll.svg" alt="scroll" width={32} height={143} />
-  )
-}
+    <Image
+      className="mx-auto hidden xl:block"
+      src="/Scroll.svg"
+      alt="scroll"
+      width={32}
+      height={143}
+    />
+  );
+};

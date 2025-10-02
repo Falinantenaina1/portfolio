@@ -1,13 +1,12 @@
-"use client"
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+'use client';
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export const HoverEffect = ({
   items,
-  className,
+  className
 }: {
   items: {
     title: string;
@@ -21,41 +20,46 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "md:max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4  pt-10",
+        'mx-auto grid grid-cols-2 pt-10 max-sm:max-w-[21.25rem] sm:grid-cols-3 md:max-w-5xl md:grid-cols-3 lg:grid-cols-4',
         className
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
+        <div
           key={item?.title}
-          target="_blank"
-          className="relative group  block p-2 h-full w-full"
+          className="group relative block h-full w-full p-1 md:p-2 lg:p-4"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-primary dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="bg-primary absolute inset-0 block h-full w-full rounded-3xl dark:bg-slate-800/[0.8]"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 0.15 },
+                  transition: { duration: 0.15 }
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
+                  transition: { duration: 0.15, delay: 0.2 }
                 }}
               />
             )}
           </AnimatePresence>
-          <Card>
-            <CardImage><Image src={item.icon} width={800} height={800} alt={`${item.title} icon`} /></CardImage>
-            <CardTitle>{item.title}</CardTitle>
+          <Card className="p-0">
+            <CardImage className="p-0">
+              <Image
+                src={item.icon}
+                width={80}
+                height={80}
+                alt={`${item.title} icon`}
+              />
+            </CardImage>
+            <CardTitle className="text-xs">{item.title}</CardTitle>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
@@ -63,7 +67,7 @@ export const HoverEffect = ({
 
 export const Card = ({
   className,
-  children,
+  children
 }: {
   className?: string;
   children: React.ReactNode;
@@ -71,7 +75,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-card border border-transparent dark:border-white/[0.2] group-hover:border-secondary relative z-20",
+        'bg-card group-hover:border-secondary relative z-20 h-full w-full overflow-hidden rounded-2xl border border-transparent p-4 dark:border-white/[0.2]',
         className
       )}
     >
@@ -83,20 +87,25 @@ export const Card = ({
 };
 export const CardTitle = ({
   className,
-  children,
+  children
 }: {
   className?: string;
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("font-sans font-bold text-center tracking-wide mt-4", className)}>
+    <h3
+      className={cn(
+        'mt-4 text-center font-sans font-bold tracking-wide',
+        className
+      )}
+    >
       {children}
-    </h4>
+    </h3>
   );
 };
 export const CardImage = ({
   className,
-  children,
+  children
 }: {
   className?: string;
   children: React.ReactNode;
@@ -104,7 +113,7 @@ export const CardImage = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm w-20 h-20 mx-auto",
+        'mx-auto mt-8 h-20 w-20 text-sm leading-relaxed tracking-wide text-zinc-400',
         className
       )}
     >
