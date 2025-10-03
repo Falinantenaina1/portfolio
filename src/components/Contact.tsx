@@ -14,8 +14,6 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
 
-console.log(SERVICE_ID);
-
 export const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
@@ -66,15 +64,15 @@ export const Contact = () => {
               />
             </div>
             <div className="grid w-full items-center gap-2.5">
-              <Label htmlFor="lastname">
+              <Label htmlFor="name">
                 Lastname
                 <span className="text-primary align-top text-xs/2">*</span>
               </Label>
               <Input
                 type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Lastname"
+                id="name"
+                name="name"
+                placeholder="name"
                 required
               />
             </div>
